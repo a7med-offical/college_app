@@ -29,7 +29,8 @@ class _RegisterViewState extends State<RegisterView> {
   Future<void> UserRegister() async {
     if (_formKey.currentState!.validate()) {
       final response = await http.post(
-        Uri.parse('http://localhost:============='), //=======>>>====>>>>Link Local Host هنا
+        Uri.parse(
+            'http://localhost:============='), //=======>>>====>>>>Link Local Host هنا
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -143,21 +144,25 @@ class _RegisterViewState extends State<RegisterView> {
                   icon: Icons.phone,
                 ),
                 TextFieldWithHeader(
-                    hint: 'type your date of birth',
-                    onTap: () async {
-                      final pickedDate = await showDatePicker(
-                        context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime(1900),
-                        lastDate: DateTime.now(),
-                      );
-                      if (pickedDate != null) {
-                        dateOfBirth.text = pickedDate.toString();
-                      }
-                    },
-                    controller: dateOfBirth,
-                    header: 'date of birth',
-                    icon: Icons.calendar_month),
+                  hint: 'type your date of birth',
+                  onTap: () async {
+                    final pickedDate = await showDatePicker(
+                      context: context,
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(1900),
+                      lastDate: DateTime.now(),
+                    );
+                    if (pickedDate != null) {
+                      String formattedDate = pickedDate
+                          .toString()
+                          .substring(0, 10); // Remove milliseconds
+                      dateOfBirth.text = formattedDate;
+                    }
+                  },
+                  controller: dateOfBirth,
+                  header: 'date of birth',
+                  icon: Icons.calendar_month,
+                ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
