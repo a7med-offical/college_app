@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:college_app/views/admin_home_view.dart';
 import 'package:http/http.dart' as http;
 import 'package:college_app/components/button_componet.dart';
 import 'package:college_app/components/textfield_and_header.dart';
@@ -188,7 +189,10 @@ class _RegisterViewState extends State<RegisterView> {
                   height: 20,
                 ),
                 MyButton(
-                  onPressed: () => UserRegister(),
+                  onPressed: () {
+                    UserRegister();
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => adminHomeView(),));
+                  },
                   textButton: 'Register',
                 ),
                 const SizedBox(
