@@ -1,4 +1,4 @@
-import 'package:college_app/views/Notification_admin_view.dart';
+import 'package:college_app/views/admin/Notification_admin_view.dart';
 import 'package:flutter/material.dart';
 
 class adminHomeView extends StatelessWidget {

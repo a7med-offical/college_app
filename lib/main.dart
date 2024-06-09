@@ -1,3 +1,6 @@
+import 'package:college_app/views/admin/student_card_listview.dart';
+import 'package:college_app/views/stduent/activaty_view.dart';
+import 'package:college_app/views/stduent/create%20_card_view.dart';
 import 'package:flutter/material.dart';
 import 'views/register_view.dart';
 
@@ -14,7 +17,7 @@ class CollegeApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home:RegisterView()
+      home:DisplayStudentCard()
     );
   }
 }
